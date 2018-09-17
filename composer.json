@@ -1,5 +1,5 @@
 {
-    "name": "leo0o/sns_oauth",
+    "name": "leo0o/SnsOauth",
     "description": "another php lib for sns oauth2.0",
     "type": "library",
     "license": "MIT",
