@@ -12,12 +12,12 @@
 ## 使用
 ```php
 try {
-    $wechat = new \oauth\OAuth("wechat", [
-        'appKey'=>'你的appkey',
-        'appSecret'=>'你的appsecret',
-        'redirectUrl'=>'回调地址，必传']);
-    
-    var_dump($wechat->Authrize('回调带回的code'));
+    $wechat = new \oauth\OAuth('平台类型, 如：weibo/weixin/qq' , [
+            'appKey'=>'你的appkey',
+            'appSecret'=>'你的appsecret',
+            'redirectUrl'=>'回调地址，必传'
+            ]);
+    $userinfo = $wechat->Authrize('回调带回的code');
 } catch (OAuthException $e) {
     var_dump(echo $e->getMessage());
 }
@@ -32,5 +32,4 @@ try {
     'headimgurl'    =>  '',
     'unionid'       =>  ''
 ]
-
 ```
