@@ -26,7 +26,7 @@ class Qq extends Base
             'code' => $code,
             'redirect_uri' => $this->redirectUrl
         ]);
-        if (strpos($response, 'callback')) {
+        if (strpos($response, 'callback') !== false) {
             throw new \Exception(sprintf('获取accesstoken返回异常，%s', $response));
         }
         $temp = explode('&', $response)[0];

@@ -17,6 +17,8 @@ class Http
             curl_setopt($ch, CURLOPT_HEADER, false);
             curl_setopt($ch, CURLOPT_TIMEOUT, 30);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             if ($option !== null) {
                 if (array_key_exists('header', $option)) {
                     curl_setopt($ch, CURLOPT_HTTPHEADER, $option['header']);
