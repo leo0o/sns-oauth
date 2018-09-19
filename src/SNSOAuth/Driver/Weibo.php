@@ -6,7 +6,7 @@
  * Time: 17:41
  */
 
-namespace oauth\Driver;
+namespace SNSOAuth\Driver;
 
 use SNSOAuth\Common\Base;
 use SNSOAuth\Lib\Http;
