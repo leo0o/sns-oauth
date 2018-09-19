@@ -9,6 +9,7 @@
 namespace SNSOAuth\Driver;
 
 use SNSOAuth\Common\Base;
+use SNSOAuth\Common\OAuthException;
 use SNSOAuth\Lib\Http;
 
 class Qq extends Base
@@ -27,7 +28,7 @@ class Qq extends Base
             'redirect_uri' => $this->redirectUrl
         ]);
         if (strpos($response, 'callback') !== false) {
-            throw new \Exception(sprintf('获取accesstoken返回异常，%s', $response));
+            throw new OAuthException(sprintf('获取accesstoken返回异常，%s', $response));
         }
         $temp = explode('&', $response)[0];
         $accesstoken = explode('=', $temp)[1];

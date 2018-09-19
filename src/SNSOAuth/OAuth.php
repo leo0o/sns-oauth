@@ -31,11 +31,7 @@ class OAuth
         if (!$this->driver instanceof Base) {
             throw new OAuthException("driver 类型异常");
         } else {
-            try {
-                $result = $this->driver->authrize($code);
-            } catch (OAuthException $e) {
-                $result = null;
-            }
+            $result = $this->driver->authrize($code);
             return $result;
         }
     }
