@@ -6,10 +6,10 @@
  * Time: 17:39
  */
 
-namespace oauth\driver;
+namespace SNSOAuth\Driver;
 
-use oauth\common\Base;
-use oauth\lib\Http;
+use SNSOAuth\Common\Base;
+use SNSOAuth\Lib\Http;
 
 class Wechat extends Base
 {

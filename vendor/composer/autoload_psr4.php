@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'oauth\\' => array($baseDir . '/src'),
+    'SNSOAuth\\' => array($baseDir . '/src/SNSOAuth'),
 );

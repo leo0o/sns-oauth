@@ -12,7 +12,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "oauth\\": "src/"
+            "SNSOAuth\\": "src/SNSOAuth"
     }
 }
 }

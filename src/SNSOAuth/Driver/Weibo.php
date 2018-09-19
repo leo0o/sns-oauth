@@ -6,10 +6,10 @@
  * Time: 17:41
  */
 
-namespace oauth\driver;
+namespace oauth\Driver;
 
-use oauth\common\Base;
-use oauth\lib\Http;
+use oauth\Common\Base;
+use oauth\Lib\Http;
 
 class Weibo extends Base
 {

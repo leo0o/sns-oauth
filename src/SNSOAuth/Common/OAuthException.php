@@ -6,7 +6,7 @@
  * Time: 9:43
  */
 
-namespace oauth\common;
+namespace SNSOAuth\Common;
 
 
 use Throwable;

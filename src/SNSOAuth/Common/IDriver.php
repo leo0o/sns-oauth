@@ -6,7 +6,7 @@
  * Time: 17:37
  */
 
-namespace oauth\common;
+namespace SNSOAuth\Common;
 
 
 interface IDriver

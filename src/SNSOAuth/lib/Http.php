@@ -6,7 +6,7 @@
  * Time: 14:55
  */
 
-namespace oauth\lib;
+namespace SNSOAuth\Lib;
 
 class Http
 {

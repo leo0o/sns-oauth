@@ -6,10 +6,10 @@
  * Time: 17:24
  */
 
-namespace oauth;
+namespace SNSOAuth;
 
-use oauth\common\Base;
-use oauth\common\OAuthException;
+use SNSOAuth\Common\Base;
+use SNSOAuth\Common\OAuthException;
 
 class OAuth
 {
@@ -18,7 +18,7 @@ class OAuth
 
     public function __construct($drivername, array $config)
     {
-        $classname = "oauth\\driver\\" . ucfirst($drivername);
+        $classname = "SNSOAuth\\Driver\\" . ucfirst($drivername);
         if (!class_exists($classname)) {
             throw new OAuthException("请检查传入的 drivername");
         }

@@ -6,7 +6,7 @@
  * Time: 15:24
  */
 
-namespace oauth\common;
+namespace SNSOAuth\Common;
 
 abstract class Base implements IDriver
 {

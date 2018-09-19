@@ -6,10 +6,10 @@
  * Time: 17:41
  */
 
-namespace oauth\driver;
+namespace SNSOAuth\Driver;
 
-use oauth\common\Base;
-use oauth\lib\Http;
+use SNSOAuth\Common\Base;
+use SNSOAuth\Lib\Http;
 
 class Qq extends Base
 {
