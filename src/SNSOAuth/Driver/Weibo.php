@@ -8,8 +8,8 @@
 
 namespace oauth\Driver;
 
-use oauth\Common\Base;
-use oauth\Lib\Http;
+use SNSOAuth\Common\Base;
+use SNSOAuth\Lib\Http;
 
 class Weibo extends Base
 {
