@@ -9,6 +9,7 @@
 namespace SNSOAuth\Driver;
 
 use SNSOAuth\Common\Base;
+use SNSOAuth\Common\OAuthException;
 use SNSOAuth\Lib\Http;
 
 class Wechat extends Base
@@ -40,21 +41,13 @@ class Wechat extends Base
     {
         $Result = $this->getAccessToken($code);
         if (!empty($Result['errcode'])) {
-            return [
-                'status' => false,
-                'msg' => json_encode($Result),
-                'data' => null
-            ];
+            throw new OAuthException(sprintf('获取accesstoken返回异常，微信返回：%s', json_encode($Result)));
         }
         $openid = $Result['openid'];
         $accessToken = $Result['access_token'];
         $userInfo = $this->getUserInfo($accessToken, $openid);
         if (!empty($userInfo['errcode'])) {
-            return [
-                'status' => false,
-                'msg' => json_encode($userInfo),
-                'data' => null
-            ];
+            throw new OAuthException(sprintf('获取userinfo返回异常，微信返回：%s', json_encode($userInfo)));
         }
         return [
             'nickname' => $userInfo['nickname'],

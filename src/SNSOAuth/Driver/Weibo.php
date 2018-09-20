@@ -9,6 +9,7 @@
 namespace SNSOAuth\Driver;
 
 use SNSOAuth\Common\Base;
+use SNSOAuth\Common\OAuthException;
 use SNSOAuth\Lib\Http;
 
 class Weibo extends Base
@@ -41,21 +42,13 @@ class Weibo extends Base
     {
         $Result = $this->getAccessToken($code);
         if (!empty($Result['error_code'])) {
-            return [
-                'status' => false,
-                'msg' => json_encode($Result),
-                'data' => null
-            ];
+            throw new OAuthException(sprintf('获取access_token返回异常，微博返回：%s', json_encode($Result)));
         }
         $openid = $Result['uid'];
         $accessToken = $Result['access_token'];
         $userInfo = $this->getUserInfo($accessToken, $openid);
         if (!empty($userInfo['error_code'])) {
-            return [
-                'status' => false,
-                'msg' => json_encode($userInfo),
-                'data' => null
-            ];
+            throw new OAuthException(sprintf('获取getUserInfo返回异常，微博返回：%s', json_encode($userInfo)));
         }
         switch ($userInfo['gender']) {
             case 'm' :

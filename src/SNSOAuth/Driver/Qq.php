@@ -58,15 +58,12 @@ class Qq extends Base
     public function authrize($code)
     {
         $Result = $this->getAccessToken($code);
+        if (!empty($Result['error'])) {
+            throw new OAuthException(sprintf('获取accesstoken返回异常，QQ返回：%s', json_encode($Result)));
+        }
+
         $accessToken = $Result['access_token'];
         $openidResponse = $this->getOpenid($accessToken);
-        if (!empty($Result['error'])) {
-            return [
-                'status' => false,
-                'msg' => json_encode($Result),
-                'data' => null
-            ];
-        }
         $openid = $openidResponse['openid'];
         $unionid = $openidResponse['unionid'];
         $userInfo = $this->getUserInfo($accessToken, $openid);
