@@ -12,7 +12,7 @@
 ## 使用
 ```php
 try {
-    $wechat = new \oauth\OAuth('平台类型, 如：weibo/weixin/qq' , [
+    $wechat = new \oauth\OAuth('平台类型, 如：\SNSOAuth\Common\Platform::SINA_WEIBO' , [
             'appKey'=>'你的appkey',
             'appSecret'=>'你的appsecret',
             'redirectUrl'=>'回调地址，必传'
