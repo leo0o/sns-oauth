@@ -13,7 +13,7 @@ final class Platform
 {
 
     // 微信
-    const  WECHAT = 'weixin';
+    const  WECHAT = 'wechat';
 
     // qq
     const  QQ = 'qq';
